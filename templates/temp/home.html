@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        {% for q in qr %}
+        <a href="{% url 'update_user' q.id %}"><li> {{q.fname}} </li></a>
+        <a href="{% url 'delete_user' q.id %}"><button>Delete user</button></a>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_user' %}"><button>Create user</button></a>
+</body>
+</html>
