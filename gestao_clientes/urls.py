@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from clientes.views import create, home, update, delete
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('logout/', auth_views.auth_logout, name='logout'),
     path('create_user/', create, name='create_user'),
     path('home/', home, name='query_user'),
     path('update/<int:id>', update, name='update_user'),

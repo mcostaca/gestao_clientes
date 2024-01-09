@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{% url 'logout' %}"><button>Logout</button></a>
     <ul>
         {% for q in qr %}
         <a href="{% url 'update_user' q.id %}"><li> {{q.fname}} </li></a>
